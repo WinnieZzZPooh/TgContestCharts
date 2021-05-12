@@ -1,0 +1,12 @@
+@custom-media --tablet (min-width: 870px);
+@custom-media --wide (min-width: 1400px);
+@custom-media --x-wide (min-width: 1600px);
+@custom-media --low (max-height: 500px);
+@custom-media --high (min-height: 600px) and (max-width: 1400px);
+@custom-media --narrow-landscape (min-aspect-ratio: 3/2) and (max-width: 1400px);
+
+:root {
+    --theme-transition-duration: 100ms;
+    --footer-height: 8vh;
+    --chart-title-margin: 4vh;
+}

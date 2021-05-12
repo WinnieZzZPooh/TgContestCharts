@@ -1,0 +1,76 @@
+.chart-preview {
+    min-height: 35px;
+    max-height: 50px;
+    position: relative;
+    user-select: none;
+
+    & svg {
+        position: relative;
+        pointer-events: none;
+        z-index: 1;
+    }
+
+    & .sliding-window {
+        position: absolute;
+        width: 100%;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        border: 1px solid var(--slider-color, #cccccc);
+        border-width: 1px 6px;
+        cursor: pointer;
+        transition: border-color var(--theme-transition-duration) ease-in-out;
+        z-index: 0;
+        opacity: .5;
+
+        & .grip {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: -20px;
+            width: 28px;
+            cursor: ew-resize;
+
+            &.right-grip {
+                left: auto;
+                right: -20px;
+            }
+        }
+    }
+
+    & .cover {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        background: var(--cover-color, #F3F8FB);
+        z-index: 2;
+        transition: background var(--theme-transition-duration) ease-in-out;
+        pointer-events: none;
+        opacity: .8;
+
+        &.cover-right {
+            left: auto;
+            right: 0;
+        }
+    }
+
+    &.moving {
+        & .sliding-window,
+        & .cover {
+            will-change: left, width;
+        }
+    }
+
+    @media (min-width: 900px) {
+        max-height: 60px;
+    }
+
+    @media (min-width: 1150px) {
+        max-height: 65px;
+    }
+
+    @media (--wide) {
+        max-height: 75px;
+    }
+}

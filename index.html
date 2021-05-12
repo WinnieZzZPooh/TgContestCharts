@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>Charts App for Telegram Contest</title>
+    <style>
+      :root {
+        --launcher-size: 10vmin;
+        --launcher-border-width: 15vmin;
+      }
+
+      #launcher {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #242F3E;
+        z-index: 9999;
+        transition: opacity 500ms 250ms ease-in-out;
+        pointer-events: none;
+      }
+
+      #launcher.done {
+        opacity: 0;
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      @media (min-width: 600px) {
+        :root {
+          --launcher-size: 60px;
+          --launcher-border-width: 80px;
+        }
+      }
+    </style>
+  </head>
+  <body data-theme="day">
+  <div id="root"></div>
+    <div id="launcher"></div>
+
+    <div class="theme-switcher hidden">
+      <div class="btn" id="theme-switcher">Switch to <span></span> Mode</div>
+    </div>
+
+    <link rel="stylesheet" href="tmp/styles.css">
+    <script src="tmp/bundle.js" async></script>
+  </body>
+</html>

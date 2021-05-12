@@ -1,0 +1,106 @@
+@import "chart.css";
+@import "chart-preview.css";
+@import "chart-legend.css";
+
+
+.chart-box {
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    flex-flow: column wrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    padding: 3vh 3vmin var(--footer-height);
+    overflow-x: hidden;
+
+    & .chart-title {
+        flex: 1 0;
+        margin-bottom: 5px;
+        padding-left: 10px;
+        font-size: 1.2em;
+        font-weight: bold;
+        color: var(--text-color, black);
+        transition: color var(--theme-transition-duration) ease-in-out;
+
+        @media (--wide) {
+            font-size: 1.4em;
+        }
+        @media (--low) {
+            font-size: 1em;
+            flex: 0 0;
+        }
+    }
+
+    & .chart-with-preview {
+        position: relative;
+        flex: 2 1 50%;
+        max-height: 150vw;
+        margin: 0 -3vmin;
+        padding: 3vmin 3vmin 0 3vmin;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: flex-start;
+        overflow: hidden;
+
+        & .chart {
+            flex: 1 1 60%;
+            min-height: 150px;
+            max-height: 100vmin;
+            margin-bottom: 40px;
+
+            & svg {
+                overflow: visible;
+            }
+
+            @media (--low) {
+                margin-bottom: 30px;
+            }
+        }
+
+        & .chart-preview {
+            flex: 1 1 10vmin;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 1;
+            background: linear-gradient(to bottom, var(--background), rgba(var(--background-rgb), 0) 3vmin),
+                        linear-gradient(to right, var(--background), rgba(var(--background-rgb), 0) 3vmin),
+                        linear-gradient(to left, var(--background), rgba(var(--background-rgb), 0) 3vmin);
+            pointer-events: none;
+        }
+
+        @media (--wide) {
+            flex-basis: 66vmin;
+        }
+    }
+
+    & .chart-legend {
+        flex: 3 1;
+    }
+
+    @media (--narrow-landscape) {
+        align-content: flex-start;
+
+        & .chart-with-preview {
+            flex-basis: 80vh;
+            width: 80%;
+        }
+
+        & .chart-legend {
+            flex-basis: 80vh;
+            width: 20%;
+            margin-top: 5vh;
+        }
+    }
+}
+
+body.changing-theme .chart-box .chart-with-preview::after {
+    display: none;
+}

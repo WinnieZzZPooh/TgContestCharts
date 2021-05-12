@@ -1,0 +1,16 @@
+[data-theme="day"] {
+    --background: white;
+    --background-rgb: 255, 255, 255;
+    --anti-background-rgb: 36, 47, 62;
+    --text-color: #222222;
+    --anti-text-color: white;
+    --cover-color: #F3F8FB;
+    --slider-color: #BAD4E7;
+    --grid-color: rgba(164, 180, 192, .15);
+    --grid-color-brighter: rgba(162, 180, 194, .2);
+    --grid-label-color: #96A2AA;
+    --link-color: #108BE3;
+    --legend-btn-border-color: #e6ecf0;
+    --data-flag-line-color: rgba(162, 180, 194, .3);
+    --tooltip-background: white;
+}

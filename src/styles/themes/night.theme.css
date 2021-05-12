@@ -1,0 +1,16 @@
+[data-theme="night"] {
+    --background: #242f3e;
+    --background-rgb: 36, 47, 62;
+    --anti-background-rgb: 255, 255, 255;
+    --text-color: white;
+    --anti-text-color: #222222;
+    --cover-color: #1F2A37;
+    --slider-color: #5C7C98;
+    --grid-color: rgba(162, 182, 200, .045);
+    --grid-color-brighter: rgba(162, 182, 200, .1);
+    --grid-label-color: #546778;
+    --link-color: #36A8F1;
+    --legend-btn-border-color: #344658;
+    --data-flag-line-color: rgba(162, 182, 200, .2);
+    --tooltip-background: #253241;
+}
